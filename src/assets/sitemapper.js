@@ -259,7 +259,12 @@ export default class Sitemapper {
         if (this.debug) {
           console.debug(`Urlset found during "crawl('${url}')"`);
         }
-        const sites = data.urlset.url.map(site => site.loc && site.loc[0]);
+
+        const sites = data.urlset.url
+          .map(site => site.loc && site.loc[0] ? site : null)
+          .filter((s) => !!s)
+          .map((s) => ({ url: s.loc[0], lastmod: s.lastmod ? new Date(s.lastmod[0]) : null }));
+
         return {
           sites,
           errors: []
