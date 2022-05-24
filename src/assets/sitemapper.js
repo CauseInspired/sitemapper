@@ -444,10 +444,16 @@ export default class Sitemapper {
 /**
  * An array of urls
  *
- * @typedef {String[]} SitesArray
+ * @typedef {Object[]} SitesArray
  * @example [
- *   'https://www.google.com',
- *   'https://www.linkedin.com'
+ *   {
+ *     url: 'https://www.google.com',
+ *     lastmod: 2022-05-23T16:44:54.000Z
+ *   },
+ *   {
+ *     url: 'https://www.google.com/some-page',
+ *     lastmod: 2022-05-21T16:44:54.000Z
+ *   }
  * ]
  */
 

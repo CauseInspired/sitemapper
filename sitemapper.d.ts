@@ -1,6 +1,10 @@
+export interface SitemapperSites {
+  url: string;
+  lastmod?: Date;
+}
 export interface SitemapperResponse {
   url: string;
-  sites: string[];
+  sites: SitemapperSites[];
   errors: SitemapperErrorData[];
 }
 
