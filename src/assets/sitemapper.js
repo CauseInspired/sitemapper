@@ -74,8 +74,8 @@ export default class Sitemapper {
 
     return {
       url,
-      sites: results.sites || [],
-      errors: results.errors || [],
+      sites: results ? results.sites : [],
+      errors: results ? results.errors : [],
     };
 
   }
