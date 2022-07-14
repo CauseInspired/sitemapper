@@ -343,7 +343,7 @@ export default class Sitemapper {
     let sites = [];
     try {
       const response = await this.fetch(url);
-      sites = response.sites;
+      sites = response ? response.sites : [];
     } catch (error) {
       err = error;
     }
